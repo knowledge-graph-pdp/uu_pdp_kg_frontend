@@ -88,7 +88,7 @@ export default function AnswerCard({ data, onOpenGraph }: AnswerCardProps) {
       <div className="answer-footer">
         <div className="chips">
           {basis.map((item, index) => (
-            <BasisChip key={item.label} item={item} index={index} />
+            <BasisChip key={`${item.kind}-${item.label}-${index}`} item={item} index={index} />
           ))}
         </div>
         <button type="button" className="link-action" onClick={onOpenGraph}>
