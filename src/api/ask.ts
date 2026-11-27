@@ -38,7 +38,7 @@ export async function askQuestion(question: string, signal: AbortSignal): Promis
     if (error instanceof DOMException && error.name === "TimeoutError") {
       throw new AskError(
         "timeout",
-        "Layanan LLM tidak merespons dalam 30 detik. Subgraf tersimpan, kirim ulang pertanyaan.",
+        "Server tidak merespons dalam 30 detik. Kirim ulang pertanyaan.",
         `Timeout setelah ${ASK_TIMEOUT_MS / 1000} detik pada POST ${ASK_URL}`,
       );
     }
